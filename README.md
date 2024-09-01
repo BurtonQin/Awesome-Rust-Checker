@@ -59,6 +59,7 @@ Academic Papers (source code not found yet)
 | [RPG](https://github.com/wcventure/PERIOD)<sup>1</sup>| RPG: Rust Library Fuzzing with Pool-based Fuzz Target. Paper: [RPG, ICSE'24](https://dl.acm.org/doi/10.1145/3597503.3639102) | - | Out-of-bound, Panic (including arithmetic) | Fuzzing | ★★☆☆☆ |
 | [SyRust](https://kilthub.cmu.edu/articles/code/SyRust_Artifact_PLDI2021_Artifact/14356976) | Automatic Testing of Rust Libraries with Semantic-Aware Program Synthesis. Paper: [SyRust, PLDI'21](https://dl.acm.org/doi/pdf/10.1145/3453483.3454084)| - | - | Program Synthesis | ★☆☆☆☆ |
 | [NADER](https://zenodo.org/records/5484436)| Automatic Context-Aware Safety Enhancement for Rust. Paper: [OOPSLA'21](https://dl.acm.org/doi/pdf/10.1145/3485480) | MIR, Source Code | Unchecked Indexing | API Replacing | ★☆☆☆☆ |
+| [casr](https://github.com/ispras/casr)<sup>2</sup> | collect crash (or UndefinedBehaviorSanitizer error) reports, triage, and estimate severity. Paper: [Casr-Cluster, ISPRAS'21](https://www.doi.org/10.1109/ISPRAS53967.2021.00012), [Ivannikov Memorial Workshop'24](https://arxiv.org/abs/2405.18174)| Crash Reports from ASan, UBSan, GDB | - | Analyze crashes| ★★★★★ |
 
 Academic Papers (source code not found yet)
 
@@ -70,6 +71,7 @@ Academic Papers (source code not found yet)
 
 
 1. The link may be incorrect. See [here](https://wcventure.github.io/EnPage/opensource/2023-12-05-RPG).
+2. casr analyze the results of dynamic checkers instead of performing dynamic analysis itself. Thanks [zjp-CN](https://github.com/zjp-CN) for recommending casr.
 
 ## Verifiers<sup>1</sup>
 
