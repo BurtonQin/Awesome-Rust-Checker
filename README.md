@@ -11,7 +11,7 @@
   - [Linters](#linters)
   - [Static Checkers](#static-checkers)
   - [Dynamic Checkers](#dynamic-checkers)
-  - [Verifiers1](#verifiers1)
+  - [Verifiers](#verifiers)
 
 ## Linters
 
@@ -67,13 +67,13 @@ Academic Papers (source code not found yet)
 | -----| ----------- | ---------- | ----------|----------- |
 | CrabSandwich | CrabSandwich: Fuzzing Rust with Rust. [CrabSandwich, Fuzzing'23](https://dl.acm.org/doi/abs/10.1145/3605157.3605176)| LLVM IR | Out-of-bounds, Panic | Fuzzing |
 | Zhiyong Ren | Detect Stack Overflow Bugs in Rust via Improved Fuzzing Technique. [Zhiyong Ren, SEKE'21](https://dl.acm.org/doi/abs/10.1145/3485832.3485841) | AST, HIR, MIR, LLVM IR | Stack Overflow | Fuzzing |
-| Rustheck | Safety Enhancement of Unsafe Rust via Dynamic Program Analysis. [Rustcheck, QRS-C'23](https://ieeexplore.ieee.org/document/10429951) | MIR | Memory vulnerabilities | Static Program Analysis, Instrumentation |
+| Rustcheck | Safety Enhancement of Unsafe Rust via Dynamic Program Analysis. [Rustcheck, QRS-C'23](https://ieeexplore.ieee.org/document/10429951) | MIR | Memory vulnerabilities | Static Program Analysis, Instrumentation |
 
 
 1. The link may be incorrect. See [here](https://wcventure.github.io/EnPage/opensource/2023-12-05-RPG).
 2. casr analyze the results of dynamic checkers instead of performing dynamic analysis itself. Thanks [zjp-CN](https://github.com/zjp-CN) for recommending casr.
 
-## Verifiers<sup>1</sup>
+## Verifiers
 
 | Name | Description | Working on | Bug Types | Technology | Maintenance |
 | -----| ----------- | ---------- | ----------| -----------| ----------- |
@@ -87,7 +87,7 @@ Academic Papers (source code not found yet)
 | [RustHorn](https://github.com/hopv/rust-horn) | A CHC-based automated verifier for Rust [RustHorn, TOPLAS'21](https://dl.acm.org/doi/full/10.1145/3462205) | MIR | - | - | ★★★★☆ |
 | [Creusot](https://github.com/creusot-rs/creusot) | A deductive verifier for Rust code. [Creusot, ICFEM'22](https://inria.hal.science/hal-03737878/file/main.pdf) | WhyML | Panics, overflows, Assertion failures | - | ★★★★★ |
 | [RustHornBelt](https://gitlab.mpi-sws.org/iris/lambda-rust/-/tree/masters/rusthornbelt) | A Semantic Foundation for Functional Verification of Rust Programs with Unsafe Code. Paper: [RustHornBelt, PLDI'22](https://dl.acm.org/doi/10.1145/3519939.3523704)| 𝜆Rust | - | - | ★★☆☆☆ |
-| [RefinedRust](https://gitlab.mpi-sws.org/lgaeher/refinedrust-dev) | A Type System for High-Assurance Verification of Rust Programs. Paper: [RefinedRust, PLDI'24](https://dl.acm.org/doi/10.1145/3656422)| Radium | - | - | ★★★★★ |
+| [RefinedRust<sup>1</sup>](https://gitlab.mpi-sws.org/lgaeher/refinedrust-dev) | A Type System for High-Assurance Verification of Rust Programs. Paper: [RefinedRust, PLDI'24](https://dl.acm.org/doi/10.1145/3656422)| Radium | - | - | ★★★★★ |
 
 Academic Papers (source code not found yet)
 
