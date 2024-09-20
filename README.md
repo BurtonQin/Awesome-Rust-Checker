@@ -27,23 +27,22 @@
 | [MIRAI](https://github.com/facebookexperimental/MIRAI) | Rust mid-level IR Abstract Interpreter | MIR | Panic, Security bugs, Correctness | Abstract Interpretation | ★★★★★ |
 | [lockbud](https://github.com/BurtonQin/lockbud) | Statically detect common memory and concurrrency bugs in Rust. Paper: [Safety Issues in Rust, TSE'24](https://songlh.github.io/paper/rust-tse.pdf) | MIR | Double-Lock, Conflicting-Lock-Order, Atomicity-Violation, Use-After-Free, Invalid-Free, Panic Locations | Data-flow Analysis | ★★★★★ |
 |[RAP (formerly SafeDrop)](https://github.com/Artisan-Lab/RAP) | Rust Analysis Platform. Paper: [SafeDrop, TOSEM'22](https://dl.acm.org/doi/10.1145/3542948) | MIR | Use-After-Free, Double-Free | Data-flow Analysis | ★★★★★ |
+|[RCanary](https://github.com/Artisan-Lab/rCanary) | Detecting Memory Leaks Across Semi-automated Memory Management Boundary in Rust. [RCanary, TSE'24](https://arxiv.org/pdf/2308.04787) | HIR, MIR | Memory Leaks | Static Program Analysis, Model Checking | ★★★☆☆ |
 |[Rudra](https://github.com/sslab-gatech/Rudra)| Rust Memory Safety & Undefined Behavior Detection. Paper: [Rudra, SOSP'21](https://dl.acm.org/doi/abs/10.1145/3477132.3483570) | HIR, MIR | Memory safety when panicked, Higher Order Invariant, Send Sync Variance | Data-flow Analysis | ★★★☆☆ |
 |[Yuga](https://github.com/vnrst/Yuga) | Automatically Detecting Lifetime Annotation Bugs in the Rust Language. Paper: [Yuga, ICSE'24](https://arxiv.org/abs/2310.08507) | HIR, MIR |  Lifetime Annotation Bugs | Data-flow Analysis | ★★★★☆ |
 |[MirChecker](https://github.com/lizhuohua/rust-mir-checker)| A Simple Static Analysis Tool for Rust. Paper: [MirChecker, CCS'21](https://dl.acm.org/doi/10.1145/3460120.3484541) | MIR | Panic (including numerical), Lifetime Corruption (memory issues) | Abstract Interpretation | ★★☆☆☆ |
 |[FFIChecker](https://github.com/lizhuohua/rust-ffi-checker) | A Static Analysis Tool For Detecting Memory Management Bugs Between Rust and C/C++. Paper: [FFIChecker, ESORICS'22](https://dl.acm.org/doi/10.1007/978-3-031-17143-7_33) | LLVM IR | Memory issues across the Rust/C FFI | Abstract Interpretation | ★☆☆☆☆ |
-
+|[RUPTA](https://github.com/rustanlys/rupta) | Supports pointer/alias analysis for Rust, operating on Rust MIR. It currently offers callsite-based pointer analysis. Paper: [RUPTA, CC'24](https://dl.acm.org/doi/10.1145/3640537.3641574) | MIR | Not bugs, for callgraph construction| Callsite-based pointer analysis | ★★★★★ |
 
 Academic Papers (source code not found yet)
 
 | Name | Description | Working on | Bug Types | Technology |
 | -----| ----------- | ---------- | ----------|----------- |
 | Rupair | Rupair: Towards Automatic Buffer Overflow Detection and Rectification for Rust. [Rupair, ACSAC'21](https://dl.acm.org/doi/abs/10.1145/3485832.3485841) | AST, MIR | Buffer Overflow | Data-flow Analysis |
-|RCanary | rCanary: Detecting Memory Leaks Across Semi-automated Memory Management Boundary in Rust. [RCanary](https://arxiv.org/pdf/2308.04787) | HIR, MIR | Memory Leaks | Static Program Analysis, Model Checking |
 | CRUST| CRUST: Towards a Unified Cross-Language Program Analysis Framework for Rust. [CRUST, QRS'22](https://ieeexplore.ieee.org/document/10062430) | CRustIR based on MIR | Security (CFI vilation, Meta Data Leaking, Format String Attack), Memory issues(Out-of-bounds, Use-after-Free, Double-Free, Stack-Overflow, Buffer-Overflow), Arithmetic (Divide-by-zero, Integer-Overflow) | Program Analysis Framework |
 | ACORN | ACORN: Towards a Holistic Cross-Language Program Analysis for Rust. [ACORN](https://csslab-ustc.github.io/publications/2023/acorn.pdf) | Wasm | Security (Tainted Variable, Dangerous Function, Format String Attack), Memory issues (Out-of-bounds, Use-after-Free, Double-Free, Stack-Overflow, Buffer-Overflow), Arithmetic (Divide-by-zero, Integer-Overflow)  | Program Analysis Framework |
 | Yu Zhang | Static Deadlock Detection for Rust Programs. [Yu Zhang](https://arxiv.org/abs/2401.01114) | MIR | Deadlock | Data-flow Analysis |
 | Kaiwen Zhang | Automatically Transform Rust Source to Petri Nets for Checking Deadlocks. [Kaiwen Zhang](https://arxiv.org/abs/2212.02754) | MIR | Deadlock | Petri Nets |
-
 
 ## Dynamic Checkers
 
@@ -60,6 +59,8 @@ Academic Papers (source code not found yet)
 | [SyRust](https://kilthub.cmu.edu/articles/code/SyRust_Artifact_PLDI2021_Artifact/14356976) | Automatic Testing of Rust Libraries with Semantic-Aware Program Synthesis. Paper: [SyRust, PLDI'21](https://dl.acm.org/doi/pdf/10.1145/3453483.3454084)| - | - | Program Synthesis | ★☆☆☆☆ |
 | [NADER](https://zenodo.org/records/5484436)| Automatic Context-Aware Safety Enhancement for Rust. Paper: [OOPSLA'21](https://dl.acm.org/doi/pdf/10.1145/3485480) | MIR, Source Code | Unchecked Indexing | API Replacing | ★☆☆☆☆ |
 | [casr](https://github.com/ispras/casr)<sup>2</sup> | collect crash (or UndefinedBehaviorSanitizer error) reports, triage, and estimate severity. Paper: [Casr-Cluster, ISPRAS'21](https://www.doi.org/10.1109/ISPRAS53967.2021.00012), [Ivannikov Memorial Workshop'24](https://arxiv.org/abs/2405.18174)| Crash Reports from ASan, UBSan, GDB | - | Analyze crashes| ★★★★★ |
+| [FRIES](https://github.com/SSCT-Lab/FRIES) | Fuzzing Rust Library Interactions via Efficient Ecosystem-Guided Target Generation. Paper: [FRIES, ISSTA'24](https://dl.acm.org/doi/pdf/10.1145/3650212.3680348) | MIR | Rust API interactions | Fuzzing | ★★★☆☆ |
+|[rustsmith](https://github.com/rustsmith/rustsmith) | A randomized program fuzzer for the Rust programming language . Paper: [rustsmith, ISSTA'23](https://rustsmith.github.io/docs/rustsmith-paper.pdf) [rustsmith, thesis](https://rustsmith.github.io/docs/rustsmith-thesis.pdf) | AST | Rust compiler bugs | Differential testing | ★★★☆☆ |
 
 Academic Papers (source code not found yet)
 
@@ -68,6 +69,8 @@ Academic Papers (source code not found yet)
 | CrabSandwich | CrabSandwich: Fuzzing Rust with Rust. [CrabSandwich, Fuzzing'23](https://dl.acm.org/doi/abs/10.1145/3605157.3605176)| LLVM IR | Out-of-bounds, Panic | Fuzzing |
 | Zhiyong Ren | Detect Stack Overflow Bugs in Rust via Improved Fuzzing Technique. [Zhiyong Ren, SEKE'21](https://dl.acm.org/doi/abs/10.1145/3485832.3485841) | AST, HIR, MIR, LLVM IR | Stack Overflow | Fuzzing |
 | Rustcheck | Safety Enhancement of Unsafe Rust via Dynamic Program Analysis. [Rustcheck, QRS-C'23](https://ieeexplore.ieee.org/document/10429951) | MIR | Memory vulnerabilities | Static Program Analysis, Instrumentation |
+| RUSTY | A Fuzzing Tool for Rust. [Poster@ACSAC'20](https://www.acsac.org/2020/program/poster-wips/2020-3-RUSTY%20%20A%20Fuzzing%20Tool%20for%20Rust.pdf) | - | Vulnerabilities | Fuzzing, Concolic Testing, Property-based Testing |
+| Rust-twins | Automatic Rust Compiler Testing through Program Mutation and Dual Macros Generation. [ASE'24](hhttps://wzyang.cn/files/Rust_twins.pdf) | AST, HIR | Rust compiler crashes and differences  |  Differential testing, mutation, macroize components, LLM |
 
 
 1. The link may be incorrect. See [here](https://wcventure.github.io/EnPage/opensource/2023-12-05-RPG).
@@ -94,6 +97,7 @@ Academic Papers (source code not found yet)
 | Name | Description | Working on | Bug Types | Technology |
 | -----| ----------- | ---------- | ----------|----------- |
 | GillianRust | A hybrid approach to semi-automated Rust verification. [GillianRust](https://arxiv.org/abs/2403.15122)| - | - | - |
+| UnsafeCop | Towards Memory Safety for Real-World Unsafe Rust Code with Practical Bounded Model checking. [UnsafeCop, FM'24](https://link.springer.com/chapter/10.1007/978-3-031-71177-0_19)| - | Memory safety issues | Bounded Model Checking |
 
 1. Thanks to [jedbrown](https://users.rust-lang.org/u/jedbrown) for recommending RefinedRust and other Rust-related verification tools.
 
