@@ -33,6 +33,7 @@
 |[MirChecker](https://github.com/lizhuohua/rust-mir-checker)| A Simple Static Analysis Tool for Rust. Paper: [MirChecker, CCS'21](https://dl.acm.org/doi/10.1145/3460120.3484541) | MIR | Panic (including numerical), Lifetime Corruption (memory issues) | Abstract Interpretation | ★★☆☆☆ |
 |[FFIChecker](https://github.com/lizhuohua/rust-ffi-checker) | A Static Analysis Tool For Detecting Memory Management Bugs Between Rust and C/C++. Paper: [FFIChecker, ESORICS'22](https://dl.acm.org/doi/10.1007/978-3-031-17143-7_33) | LLVM IR | Memory issues across the Rust/C FFI | Abstract Interpretation | ★☆☆☆☆ |
 |[RUPTA](https://github.com/rustanlys/rupta) | Supports pointer/alias analysis for Rust, operating on Rust MIR. It currently offers callsite-based pointer analysis. Paper: [RUPTA, CC'24](https://dl.acm.org/doi/10.1145/3640537.3641574) | MIR | Not bugs, for callgraph construction| Callsite-based pointer analysis | ★★★★★ |
+|[Charon](https://github.com/AeneasVerif/charon) | Interface with the rustc compiler for the purpose of program verification. Paper: [Charon](https://arxiv.org/pdf/2410.18042) | MIR, LLBC | An Analysis Framework for Rust | Convert MIR to LLBC for analysis | ★★★★★ |
 
 Academic Papers (source code not found yet)
 
@@ -43,6 +44,7 @@ Academic Papers (source code not found yet)
 | ACORN | ACORN: Towards a Holistic Cross-Language Program Analysis for Rust. [ACORN](https://csslab-ustc.github.io/publications/2023/acorn.pdf) | Wasm | Security (Tainted Variable, Dangerous Function, Format String Attack), Memory issues (Out-of-bounds, Use-after-Free, Double-Free, Stack-Overflow, Buffer-Overflow), Arithmetic (Divide-by-zero, Integer-Overflow)  | Program Analysis Framework |
 | Yu Zhang | Static Deadlock Detection for Rust Programs. [Yu Zhang](https://arxiv.org/abs/2401.01114) | MIR | Deadlock | Data-flow Analysis |
 | Kaiwen Zhang | Automatically Transform Rust Source to Petri Nets for Checking Deadlocks. [Kaiwen Zhang](https://arxiv.org/abs/2212.02754) | MIR | Deadlock | Petri Nets |
+| RustC4 | Leveraging Large Language Model to Assist Detecting Rust Code Comment Inconsistency. [ASE'24](https://dl.acm.org/doi/10.1145/3691620.3695010) | AST | Code Comment Inconsistency | LLM |
 
 ## Dynamic Checkers
 
@@ -83,12 +85,12 @@ Academic Papers (source code not found yet)
 | [kani](https://github.com/model-checking/kani/) | The Kani Rust Verifier is a bit-precise model checker for Rust. Paper: [kani, ICSE-SEIP'22](https://dl.acm.org/doi/abs/10.1145/3510457.3513031)| MIR | Memory safety, User-specified assertions, Panics, Unexpected behavior (e.g., arithmetic overflows)  | Model Checking | ★★★★★ |
 | [prusti](https://github.com/viperproject/prusti-dev) | A static verifier for Rust, based on the Viper verification infrastructure. Paper: [prusti, NFM'22 ](https://link.springer.com/chapter/10.1007/978-3-031-06773-0_5) | Viper | Panic (inluding arithmetic), User-specified assertions | Symbolic Execution  | ★★★★☆ |
 | [crux-mir](https://github.com/GaloisInc/crucible/tree/master/crux-mir) | A static simulator for Rust programs | - | - | Symbolic Testing | ★★★★☆ |
-| [verus](https://github.com/verus-lang/verus) | Verified Rust for low-level systems code. Paper: [verus, OOPSLA'23](https://dl.acm.org/doi/pdf/10.1145/3586037) | - | - | - | ★★★★★ |
+| [verus](https://github.com/verus-lang/verus) | Verified Rust for low-level systems code. Paper: [verus, OOPSLA'23](https://dl.acm.org/doi/pdf/10.1145/3586037), [SOSP'24](https://www.microsoft.com/en-us/research/publication/verus-a-practical-foundation-for-systems-verification/) | - | - | SMT-based Verification<sup>5</sup> | ★★★★★ |
 | [flux](https://github.com/flux-rs/flux) | flux is a refinement type checker for Rust. Paper: [flux, PLDI'23](https://dl.acm.org/doi/10.1145/3591283)| - | - | - | ★★★★★ |
 | [Aeneas](https://github.com/AeneasVerif/aeneas) | A verification toolchain for Rust programs. Paper: [Aeneas, ICFP'22](https://dl.acm.org/doi/abs/10.1145/3547647) | LLBC (for safe Rust only) | - | - | ★★★★★ |
 | [RustBelt](https://gitlab.mpi-sws.org/iris/lambda-rust/) | Formal (and machine-checked) safety proof for a language representing a realistic subset of Rust. Paper: [RustBelt, POPL'18](https://dl.acm.org/doi/10.1145/3158154) | 𝜆Rust| - | - | ★★★★★ |
 | [RustHorn](https://github.com/hopv/rust-horn) | A CHC-based automated verifier for Rust [RustHorn, TOPLAS'21](https://dl.acm.org/doi/full/10.1145/3462205) | MIR | - | - | ★★★★☆ |
-| [Creusot](https://github.com/creusot-rs/creusot) | A deductive verifier for Rust code. [Creusot, ICFEM'22](https://inria.hal.science/hal-03737878/file/main.pdf) | WhyML | Panics, overflows, Assertion failures | - | ★★★★★ |
+| [Creusot](https://github.com/creusot-rs/creusot) | A deductive verifier for Rust code. [Creusot, ICFEM'22](https://inria.hal.science/hal-03737878/file/main.pdf) | WhyML | Panics, overflows, Assertion failures | Deductive Verification | ★★★★★ |
 | [RustHornBelt](https://gitlab.mpi-sws.org/iris/lambda-rust/-/tree/masters/rusthornbelt) | A Semantic Foundation for Functional Verification of Rust Programs with Unsafe Code. Paper: [RustHornBelt, PLDI'22](https://dl.acm.org/doi/10.1145/3519939.3523704)| 𝜆Rust | - | - | ★★☆☆☆ |
 | [RefinedRust<sup>1</sup>](https://gitlab.mpi-sws.org/lgaeher/refinedrust-dev) | A Type System for High-Assurance Verification of Rust Programs. Paper: [RefinedRust, PLDI'24](https://dl.acm.org/doi/10.1145/3656422)| Radium | - | - | ★★★★★ |
 
@@ -96,8 +98,9 @@ Academic Papers (source code not found yet)
 
 | Name | Description | Working on | Bug Types | Technology |
 | -----| ----------- | ---------- | ----------|----------- |
-| GillianRust | A hybrid approach to semi-automated Rust verification. [GillianRust](https://arxiv.org/abs/2403.15122)| - | - | - |
+| GillianRust | A hybrid approach to semi-automated Rust verification. [GillianRust](https://arxiv.org/abs/2403.15122)| Unsafe Code Supported | - | Separation Logic based Hybrid Verification<sup>5</sup> |
 | UnsafeCop | Towards Memory Safety for Real-World Unsafe Rust Code with Practical Bounded Model checking. [UnsafeCop, FM'24](https://link.springer.com/chapter/10.1007/978-3-031-71177-0_19)| - | Memory safety issues | Bounded Model Checking |
+| SAFE | Automated Proof Generation for Rust Code via Self-Evolution. [SAFE](https://arxiv.org/abs/2410.15756) | Rust Code With Docstring, Verus | - | Verus Verifier, LLM |
 
 1. Thanks to [jedbrown](https://users.rust-lang.org/u/jedbrown) for recommending RefinedRust and other Rust-related verification tools.
 
@@ -107,6 +110,7 @@ Thanks to the following awesome works:
 2.  https://github.com/analysis-tools-dev/dynamic-analysis?tab=readme-ov-file#rust
 3. [A Survey of Rust Language Security Research](https://link.oversea.cnki.net/doi/10.19363/J.cnki.cn10-1380/tn.2023.11.06)
 4. [RefinedRust: A Type System for High-Assurance Verification of Rust Programs](https://dl.acm.org/doi/10.1145/3656422)
+5. [Verifying the Rust Standard Library](https://www.soundandcomplete.org/vstte2024/vstte2024-invited.pdf)
 
 
 
