@@ -17,7 +17,7 @@
 
 | Name | Description | Working on | Bug types | Technology | Maintenance |
 | -----| ----------- | ---------- | ----------| -----------| ----------- |
-| [clippy](https://github.com/rust-lang/rust-clippy) | A bunch of lints to catch common mistakes and improve your Rust code. | HIR | Versatile | Pattern matching | ★★★★★ |
+| [clippy](https://github.com/rust-lang/rust-clippy) | A bunch of lints to catch common mistakes and improve your Rust code. Paper: [ICSE-Companion'24](https://dl.acm.org/doi/abs/10.1145/3639478.3643096) | HIR | Versatile | Pattern matching | ★★★★★ |
 | [dylint](https://github.com/trailofbits/dylint) | Run Rust lints from dynamic libraries | HIR | Versatile | Pattern matching | ★★★★★ |
 
 ## Static Checkers
@@ -34,6 +34,8 @@
 |[FFIChecker](https://github.com/lizhuohua/rust-ffi-checker) | A Static Analysis Tool For Detecting Memory Management Bugs Between Rust and C/C++. Paper: [FFIChecker, ESORICS'22](https://dl.acm.org/doi/10.1007/978-3-031-17143-7_33) | LLVM IR | Memory issues across the Rust/C FFI | Abstract Interpretation | ★☆☆☆☆ |
 |[RUPTA](https://github.com/rustanlys/rupta) | Supports pointer/alias analysis for Rust, operating on Rust MIR. It currently offers callsite-based pointer analysis. Paper: [RUPTA, CC'24](https://dl.acm.org/doi/10.1145/3640537.3641574) | MIR | Not bugs, for callgraph construction| Callsite-based pointer analysis | ★★★★★ |
 |[Charon](https://github.com/AeneasVerif/charon) | Interface with the rustc compiler for the purpose of program verification. Paper: [Charon](https://arxiv.org/abs/2410.18042) | MIR, LLBC | An Analysis Framework for Rust | Convert MIR to LLBC for analysis | ★★★★★ |
+|[Cocoon](https://github.com/PLaSSticity/Cocoon-implementation) | Static Information Flow Control in Rust. Paper: [Cocoon, OOPSLA'24](https://dl.acm.org/doi/pdf/10.1145/3649817) | Rust Soure Code | Secrecy Leaks | Rust’s type system and procedural macros  | ★★★★★ |
+
 
 Academic Papers (source code not found yet)
 
@@ -45,6 +47,8 @@ Academic Papers (source code not found yet)
 | Yu Zhang | Static Deadlock Detection for Rust Programs. [Yu Zhang](https://arxiv.org/abs/2401.01114) | MIR | Deadlock | Data-flow Analysis |
 | Kaiwen Zhang | Automatically Transform Rust Source to Petri Nets for Checking Deadlocks. [Kaiwen Zhang](https://arxiv.org/abs/2212.02754) | MIR | Deadlock | Petri Nets |
 | RustC4 | Leveraging Large Language Model to Assist Detecting Rust Code Comment Inconsistency. [ASE'24](https://dl.acm.org/doi/10.1145/3691620.3695010) | AST | Code Comment Inconsistency | LLM |
+| craft | Automated Fault Tree Generation for Rust Programs. [EDCC'24](https://doi.ieeecomputersociety.org/10.1109/EDCC61798.2024.00022) | - | Fault Tree |  Static Program Analysis |
+| PanicFI | An Infrastructure for Fixing Panic Bugs in Real-World Rust Programs. [PanicFI](https://www.arxiv.org/pdf/2408.03262) | HIR, AST | Fixing Panic Bugs |  Pattern Matching |
 
 ## Dynamic Checkers
 
@@ -62,7 +66,8 @@ Academic Papers (source code not found yet)
 | [NADER](https://zenodo.org/records/5484436)| Automatic Context-Aware Safety Enhancement for Rust. Paper: [OOPSLA'21](https://dl.acm.org/doi/pdf/10.1145/3485480) | MIR, Source Code | Unchecked Indexing | API Replacing | ★☆☆☆☆ |
 | [casr](https://github.com/ispras/casr)<sup>2</sup> | collect crash (or UndefinedBehaviorSanitizer error) reports, triage, and estimate severity. Paper: [Casr-Cluster, ISPRAS'21](https://www.doi.org/10.1109/ISPRAS53967.2021.00012), [Ivannikov Memorial Workshop'24](https://arxiv.org/abs/2405.18174)| Crash Reports from ASan, UBSan, GDB | - | Analyze crashes| ★★★★★ |
 | [FRIES](https://github.com/SSCT-Lab/FRIES) | Fuzzing Rust Library Interactions via Efficient Ecosystem-Guided Target Generation. Paper: [FRIES, ISSTA'24](https://dl.acm.org/doi/pdf/10.1145/3650212.3680348) | MIR | Rust API interactions | Fuzzing | ★★★☆☆ |
-|[rustsmith](https://github.com/rustsmith/rustsmith) | A randomized program fuzzer for the Rust programming language . Paper: [rustsmith, ISSTA'23](https://rustsmith.github.io/docs/rustsmith-paper.pdf) [rustsmith, thesis](https://rustsmith.github.io/docs/rustsmith-thesis.pdf) | AST | Rust compiler bugs | Differential testing | ★★★☆☆ |
+|[rustsmith](https://github.com/rustsmith/rustsmith) | A randomized program fuzzer for the Rust programming language. Paper: [rustsmith, ISSTA'23](https://rustsmith.github.io/docs/rustsmith-paper.pdf) [rustsmith, thesis](https://rustsmith.github.io/docs/rustsmith-thesis.pdf) | AST | Rust compiler bugs | Differential testing | ★★★☆☆ |
+|[rustlantis](https://github.com/cbeuw/rustlantis) | UB-free and deterministic rustc fuzzer. Paper: [rustlantis, OOPSLA'24](https://dl.acm.org/doi/pdf/10.1145/3689780)| MIR | Rust compiler bugs | Differential testing | ★★★★★ |
 
 Academic Papers (source code not found yet)
 
@@ -72,7 +77,8 @@ Academic Papers (source code not found yet)
 | Zhiyong Ren | Detect Stack Overflow Bugs in Rust via Improved Fuzzing Technique. [Zhiyong Ren, SEKE'21](https://dl.acm.org/doi/abs/10.1145/3485832.3485841) | AST, HIR, MIR, LLVM IR | Stack Overflow | Fuzzing |
 | Rustcheck | Safety Enhancement of Unsafe Rust via Dynamic Program Analysis. [Rustcheck, QRS-C'23](https://ieeexplore.ieee.org/document/10429951) | MIR | Memory vulnerabilities | Static Program Analysis, Instrumentation |
 | RUSTY | A Fuzzing Tool for Rust. [Poster@ACSAC'20](https://www.acsac.org/2020/program/poster-wips/2020-3-RUSTY%20%20A%20Fuzzing%20Tool%20for%20Rust.pdf) | - | Vulnerabilities | Fuzzing, Concolic Testing, Property-based Testing |
-| Rust-twins | Automatic Rust Compiler Testing through Program Mutation and Dual Macros Generation. [ASE'24](hhttps://wzyang.cn/files/Rust_twins.pdf) | AST, HIR | Rust compiler crashes and differences  |  Differential testing, mutation, macroize components, LLM |
+| Rust-twins | Automatic Rust Compiler Testing through Program Mutation and Dual Macros Generation. [ASE'24](https://wzyang.cn/files/Rust_twins.pdf) | AST, HIR | Rust compiler crashes and differences  | Differential testing, mutation, macroize components, LLM |
+| SafeFFI | Poster: Ensuring Memory Safety for the Transition from C/C++ to Rust. [NDSS'24](https://www.ndss-symposium.org/wp-content/uploads/ndss24-posters-37.pdf)| LLVM IR | Memory safety in C/C++ and Rust Mixed Code | Existing sanitiers: HWASAN, SoftBound/CETS |
 
 
 1. The link may be incorrect. See [here](https://wcventure.github.io/EnPage/opensource/2023-12-05-RPG).
@@ -87,14 +93,15 @@ Academic Papers (source code not found yet)
 | [crux-mir](https://github.com/GaloisInc/crucible/tree/master/crux-mir) | A static simulator for Rust programs. Paper: [crux](https://arxiv.org/abs/2410.18280) | - | - | Symbolic Testing | ★★★★☆ |
 | [verus](https://github.com/verus-lang/verus) | Verified Rust for low-level systems code. Paper: [verus, OOPSLA'23](https://dl.acm.org/doi/pdf/10.1145/3586037), [SOSP'24](https://www.microsoft.com/en-us/research/publication/verus-a-practical-foundation-for-systems-verification/) | - | - | SMT-based Verification<sup>5</sup> | ★★★★★ |
 | [flux](https://github.com/flux-rs/flux) | flux is a refinement type checker for Rust. Paper: [flux, PLDI'23](https://dl.acm.org/doi/10.1145/3591283)| - | - | - | ★★★★★ |
-| [Aeneas](https://github.com/AeneasVerif/aeneas) | A verification toolchain for Rust programs. Paper: [Aeneas, ICFP'22](https://dl.acm.org/doi/abs/10.1145/3547647) | LLBC (for safe Rust only) | - | - | ★★★★★ |
+| [Aeneas](https://github.com/AeneasVerif/aeneas) | A verification toolchain for Rust programs. Paper: [Aeneas, ICFP'22](https://dl.acm.org/doi/abs/10.1145/3547647), [ICFP'24](https://dl.acm.org/doi/abs/10.1145/3674640) | LLBC (for safe Rust only) | - | - | ★★★★★ |
 | [RustBelt](https://gitlab.mpi-sws.org/iris/lambda-rust/) | Formal (and machine-checked) safety proof for a language representing a realistic subset of Rust. Paper: [RustBelt, POPL'18](https://dl.acm.org/doi/10.1145/3158154) | 𝜆Rust| - | - | ★★★★★ |
 | [RustHorn](https://github.com/hopv/rust-horn) | A CHC-based automated verifier for Rust [RustHorn, TOPLAS'21](https://dl.acm.org/doi/full/10.1145/3462205) | MIR | - | - | ★★★★☆ |
 | [Creusot](https://github.com/creusot-rs/creusot) | A deductive verifier for Rust code. [Creusot, ICFEM'22](https://inria.hal.science/hal-03737878/file/main.pdf) | WhyML | Panics, overflows, Assertion failures | Deductive Verification | ★★★★★ |
 | [RustHornBelt](https://gitlab.mpi-sws.org/iris/lambda-rust/-/tree/masters/rusthornbelt) | A Semantic Foundation for Functional Verification of Rust Programs with Unsafe Code. Paper: [RustHornBelt, PLDI'22](https://dl.acm.org/doi/10.1145/3519939.3523704)| 𝜆Rust | - | - | ★★☆☆☆ |
 | [RefinedRust<sup>1</sup>](https://gitlab.mpi-sws.org/lgaeher/refinedrust-dev) | A Type System for High-Assurance Verification of Rust Programs. Paper: [RefinedRust, PLDI'24](https://dl.acm.org/doi/10.1145/3656422)| Radium | - | - | ★★★★★ |
 | [VeriFast<sup>2</sup>](https://github.com/verifast/verifast) | Research prototype tool for modular formal verification of C and Java programs. Paper: [VeriFast, NFM'11](https://doi.org/10.1007/978-3-642-20398-5_4)| - | - | Symbolic Execution | ★★★★★ |
-
+| [mendel-verifier](https://github.com/viperproject/mendel-verifier) | Capability-based verifier for safe Rust clients of interior mutability. Paper: [Poli](https://arxiv.org/abs/2405.08372), [Thesis](https://www.research-collection.ethz.ch/bitstream/handle/20.500.11850/703796/Poli2024.pdf?sequence=3&isAllowed=y)| Viper | Interior Mutability | Symbolic Execution | ★★★★★ |
+| [silver-sif-extension](https://github.com/viperproject/silver-sif-extension) | Extension of the Viper language with modular product programs and information flow specifications. Paper: [Thesis](https://ethz.ch/content/dam/ethz/special-interest/infk/chair-program-method/pm/documents/Education/Theses/Till_Arnold_MA_Report.pdf)| Viper | Differential Privacy | Symbolic Execution | ★★★★★ |
 
 Academic Papers (source code not found yet)
 
@@ -103,6 +110,7 @@ Academic Papers (source code not found yet)
 | GillianRust | A hybrid approach to semi-automated Rust verification. [GillianRust](https://arxiv.org/abs/2403.15122)| Unsafe Code Supported | - | Separation Logic based Hybrid Verification<sup>5</sup> |
 | UnsafeCop | Towards Memory Safety for Real-World Unsafe Rust Code with Practical Bounded Model checking. [UnsafeCop, FM'24](https://link.springer.com/chapter/10.1007/978-3-031-71177-0_19)| - | Memory safety issues | Bounded Model Checking |
 | SAFE | Automated Proof Generation for Rust Code via Self-Evolution. [SAFE](https://arxiv.org/abs/2410.15756) | Rust Code With Docstring, Verus | - | Verus Verifier, LLM |
+| PanicCheck | Broadly Enabling KLEE to Effortlessly Find Unrecoverable Errors. [PanicCheck, ICSE-SEIP'24](https://doi.org/10.1145/3639477.3639714) | LLVM IR | Panic | KLEE |
 
 1. Thanks to [jedbrown](https://users.rust-lang.org/u/jedbrown) for recommending RefinedRust and other Rust-related verification tools.
 2. Rust support is WIP in VeriFast. Thanks [zjp-CN](https://github.com/zjp-CN) for recommending VeriFast.
@@ -114,7 +122,3 @@ Thanks to the following awesome works:
 3. [A Survey of Rust Language Security Research](https://link.oversea.cnki.net/doi/10.19363/J.cnki.cn10-1380/tn.2023.11.06)
 4. [RefinedRust: A Type System for High-Assurance Verification of Rust Programs](https://dl.acm.org/doi/10.1145/3656422)
 5. [Verifying the Rust Standard Library](https://www.soundandcomplete.org/vstte2024/vstte2024-invited.pdf)
-
-
-
-
