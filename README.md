@@ -35,6 +35,7 @@
 |[RUPTA](https://github.com/rustanlys/rupta) | Supports pointer/alias analysis for Rust, operating on Rust MIR. It currently offers callsite-based pointer analysis. Paper: [RUPTA, CC'24](https://dl.acm.org/doi/10.1145/3640537.3641574) | MIR | Not bugs, for callgraph construction| Callsite-based pointer analysis | ★★★★★ |
 |[Charon](https://github.com/AeneasVerif/charon) | Interface with the rustc compiler for the purpose of program verification. Paper: [Charon](https://arxiv.org/abs/2410.18042) | MIR, LLBC | An Analysis Framework for Rust | Convert MIR to LLBC for analysis | ★★★★★ |
 |[Cocoon](https://github.com/PLaSSticity/Cocoon-implementation) | Static Information Flow Control in Rust. Paper: [Cocoon, OOPSLA'24](https://dl.acm.org/doi/pdf/10.1145/3649817) | Rust Soure Code | Secrecy Leaks | Rust’s type system and procedural macros  | ★★★★★ |
+|[rustsp_analyzer](https://github.com/Artisan-Lab/rustsp_analyzer) | Fearless Unsafe. A More User-friendly Document for Unsafe Rust Programming Base on Refined Safety Properties. Paper: [Fearless Unsafe](https://arxiv.org/pdf/2412.06251) | HIR | Safety Properties | Summarization | ★★★★★ |
 
 
 Academic Papers (source code not found yet)
@@ -68,6 +69,7 @@ Academic Papers (source code not found yet)
 | [FRIES](https://github.com/SSCT-Lab/FRIES) | Fuzzing Rust Library Interactions via Efficient Ecosystem-Guided Target Generation. Paper: [FRIES, ISSTA'24](https://dl.acm.org/doi/pdf/10.1145/3650212.3680348) | MIR | Rust API interactions | Fuzzing | ★★★☆☆ |
 |[rustsmith](https://github.com/rustsmith/rustsmith) | A randomized program fuzzer for the Rust programming language. Paper: [rustsmith, ISSTA'23](https://rustsmith.github.io/docs/rustsmith-paper.pdf) [rustsmith, thesis](https://rustsmith.github.io/docs/rustsmith-thesis.pdf) | AST | Rust compiler bugs | Differential testing | ★★★☆☆ |
 |[rustlantis](https://github.com/cbeuw/rustlantis) | UB-free and deterministic rustc fuzzer. Paper: [rustlantis, OOPSLA'24](https://dl.acm.org/doi/pdf/10.1145/3689780)| MIR | Rust compiler bugs | Differential testing | ★★★★★ |
+|[RuMono](https://github.com/Artisan-Lab/RULF/tree/RuMono) | A fully automated Rust fuzz driver generator. Paper: [RuMono, TOSEM'24](https://dl.acm.org/doi/abs/10.1145/3709359) | - | Generic APIs | Fuzzing | ★★★★★ |
 
 Academic Papers (source code not found yet)
 
