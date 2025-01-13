@@ -36,6 +36,7 @@
 |[Charon](https://github.com/AeneasVerif/charon) | Interface with the rustc compiler for the purpose of program verification. Paper: [Charon](https://arxiv.org/abs/2410.18042) | MIR, LLBC | An Analysis Framework for Rust | Convert MIR to LLBC for analysis | ★★★★★ |
 |[Cocoon](https://github.com/PLaSSticity/Cocoon-implementation) | Static Information Flow Control in Rust. Paper: [Cocoon, OOPSLA'24](https://dl.acm.org/doi/pdf/10.1145/3649817) | Rust Soure Code | Secrecy Leaks | Rust’s type system and procedural macros  | ★★★★★ |
 |[rustsp_analyzer](https://github.com/Artisan-Lab/rustsp_analyzer) | Fearless Unsafe. A More User-friendly Document for Unsafe Rust Programming Base on Refined Safety Properties. Paper: [Fearless Unsafe](https://arxiv.org/pdf/2412.06251) | HIR | Safety Properties | Summarization | ★★★★★ |
+|[AtomVChecker](https://github.com/AtomVChecker/rust-atomic-study/tree/main/section-5-detection/AtomVChecker) | Statically detect memory ordering misuses for Rust. Paper: [AtomVChecker, ISSRE'24](https://ieeexplore.ieee.org/document/10771495) | MIR | Atomic concurrency bugs and performance loss due to memory ordering misuse | Data-flow Analysis | ★★★★★ |
 
 
 Academic Papers (source code not found yet)
