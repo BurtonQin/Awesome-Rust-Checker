@@ -1,16 +1,18 @@
 set -e
-echo "Bot starts committing README.md"
+set -o pipefail
 
-# Set up bot committer
-git config --local user.email "BurtonQin+github-actions[bot]@users.noreply.github.com"
-git config --local user.name "GitHub Actions [Bot]"
+echo "Bot starts committing README.md"
 
 test_md=$(pwd)/test.md
 
 # git clone Awesome-Rust-Checker
 cd
-git clone https://x-access-token:$(GITHUB_TOKEN)@github.com/os-checker/Awesome-Rust-Checker
+git clone https://x-access-token:$GITHUB_TOKEN@github.com/os-checker/Awesome-Rust-Checker
 cd Awesome-Rust-Checker
+
+# Set up bot committer
+git config --local user.email "BurtonQin+github-actions[bot]@users.noreply.github.com"
+git config --local user.name "GitHub Actions [Bot]"
 
 # Replace README
 cp $test_md README.md
