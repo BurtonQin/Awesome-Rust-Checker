@@ -5,7 +5,10 @@ on: push
 jobs:
   update-preview:
     runs-on: ubuntu-latest
+    permissions: write-all
     steps:
       - uses: actions/checkout@v4
       - name: Run update.py
-        run: python3 update_time.py && ls -alh && diff README.md test.md --color=always || true
+        env:
+          GITHUB_TOKEN: ${{ github.GITHUB_TOKEN }}
+        run: python3 update_time.py && ls -alh && diff README.md test.md --color=always || . .github/push.sh
