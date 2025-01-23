@@ -72,6 +72,7 @@ Academic Papers (source code not found yet)
 |[rustsmith](https://github.com/rustsmith/rustsmith) | A randomized program fuzzer for the Rust programming language. Paper: [rustsmith, ISSTA'23](https://rustsmith.github.io/docs/rustsmith-paper.pdf) [rustsmith, thesis](https://rustsmith.github.io/docs/rustsmith-thesis.pdf) | AST | Rust compiler bugs | Differential testing | 2023-07-21 |
 |[rustlantis](https://github.com/cbeuw/rustlantis) | UB-free and deterministic rustc fuzzer. Paper: [rustlantis, OOPSLA'24](https://dl.acm.org/doi/pdf/10.1145/3689780)| MIR | Rust compiler bugs | Differential testing | 2025-01-17 |
 |[RuMono](https://github.com/Artisan-Lab/RULF/tree/RuMono) | A fully automated Rust fuzz driver generator. Paper: [RuMono, TOSEM'24](https://dl.acm.org/doi/abs/10.1145/3709359) | - | Generic APIs | Fuzzing | 2023-11-09 |
+| [rtsan-standalone-rs](https://github.com/realtime-sanitizer/rtsan-standalone-rs) | Standalone RealtimeSanitizer for Rust. [Blogpost](https://steck.tech/posts/rtsan-in-rust/) | Soure Code | Real-time Violations | LLVM  | 2025-01-20 |
 
 Academic Papers (source code not found yet)
 
