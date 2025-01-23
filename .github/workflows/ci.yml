@@ -18,7 +18,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           add-paths: README.md
           commit-message: "[bot] Update last commit time in README.md"
-          author: BurtonQin+github-actions[bot]@users.noreply.github.com
+          author: action-bot <BurtonQin+github-actions[bot]@users.noreply.github.com>
           delete-branch: true
           branch: update-commit-time-preview
           title: '[bot] Update last commit time in README.md'
