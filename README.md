@@ -60,7 +60,7 @@ Academic Papers (source code not found yet)
 | [cargo-careful](https://github.com/RalfJung/cargo-careful) | Execute Rust code carefully, with extra checking along the way | - | Undefined Behavior | Enable Debug Assertion in std | 2024-08-10 |
 | [cargo-fuzz](https://github.com/rust-fuzz/cargo-fuzz) | Command line helpers for fuzzing | - | - | Fuzzing | 2024-11-04 |
 | [Loom](https://github.com/tokio-rs/loom)| Concurrency permutation testing tool for Rust. | Source Code | Concurrency Bugs | Permutation testing | 2024-12-27 |
-| [Shuttle](https://github.com/awslabs/shuttle) | A library for testing concurrent Rust code | Source Code | Concurrency Bugs | Randomized testing | 2024-12-06 |
+| [Shuttle](https://github.com/awslabs/shuttle) | A library for testing concurrent Rust code. Paper [A Randomized Scheduler with Probabilistic Guarantees of Finding Bugs](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/asplos277-pct.pdf) | Source Code | Concurrency Bugs | Randomized testing | 2024-12-06 |
 | [ERASAN](https://github.com/S2-Lab/ERASan) | Efficient Rust Address Sanitizer. Paper: [IEEES&P'24](https://www.computer.org/csdl/proceedings-article/sp/2024/313000a239/1WPcYZde4BW) | - | Memory Access Bugs | Fuzzing | 2024-07-10 |
 | [Automated-Fuzzer](https://github.com/qarmin/Automated-Fuzzer) | Simple tool to create broken files and checking them with special apps | - | Panic | Fuzzing | 2025-01-13 |
 | [RULF](https://github.com/Artisan-Lab/RULF)| Fuzz Target Generator for Rust libraries. Paper: [RULF, ASE'21](https://dl.acm.org/doi/abs/10.1109/ASE51524.2021.9678813) | - | Out-of-bound, Panic (including arithmetic) | Fuzzing | 2023-11-09 |
