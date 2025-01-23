@@ -11,4 +11,4 @@ jobs:
       - name: Run update.py
         env:
           GITHUB_TOKEN: ${{ github.GITHUB_TOKEN }}
-        run: python3 update_time.py && ls -alh && diff README.md test.md --color=always || pwd && . .github/push.sh
+        run: python3 update_time.py && ls -alh && diff README.md test.md --color=always || . .github/push.sh
