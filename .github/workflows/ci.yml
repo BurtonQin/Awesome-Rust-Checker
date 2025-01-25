@@ -17,7 +17,7 @@ jobs:
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v7
         with:
-          token: ${{ github.token }}
+          token: ${{ secrets.CHECKER_PAT }} 
           add-paths: README.md
           commit-message: "[bot] Update last commit time in README.md"
           author: action-bot <BurtonQin+github-actions[bot]@users.noreply.github.com>
