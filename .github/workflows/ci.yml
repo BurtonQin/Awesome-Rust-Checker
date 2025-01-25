@@ -23,5 +23,6 @@ jobs:
           author: action-bot <BurtonQin+github-actions[bot]@users.noreply.github.com>
           delete-branch: true
           branch: update-commit-time-preview
+          base: master
           title: '[bot] Update last commit time in README.md'
           body: Some checkers recently are updated in their repo activies.
