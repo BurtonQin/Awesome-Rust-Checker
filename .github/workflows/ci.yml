@@ -5,7 +5,9 @@ on: push
 jobs:
   update-preview:
     runs-on: ubuntu-latest
-    permissions: write-all
+    permissions:
+      contents: write
+      pull-requests: write
     steps:
       - uses: actions/checkout@v4
 
