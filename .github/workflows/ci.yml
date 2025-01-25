@@ -1,0 +1,25 @@
+name: (Preview) Update last commit time
+
+on: push
+
+jobs:
+  update-preview:
+    runs-on: ubuntu-latest
+    permissions: write-all
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run update.py
+        run: python3 update_time.py && ls -alh && diff README.md test.md --color=always || mv test.md README.md
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          add-paths: README.md
+          commit-message: "[bot] Update last commit time in README.md"
+          author: action-bot <BurtonQin+github-actions[bot]@users.noreply.github.com>
+          delete-branch: true
+          branch: update-commit-time-preview
+          title: '[bot] Update last commit time in README.md'
+          body: Some checkers recently are updated in their repo activies.

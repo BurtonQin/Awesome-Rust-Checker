@@ -47,7 +47,7 @@ def update_markdown_file(file_path):
         owner, repo = subs[0], subs[1]
         last_commit_time = fetch_last_commit_time(owner, repo)
         if not last_commit_time:
-            update_lines.append(line)
+            updated_lines.append(line)
             continue
         # Replace the last field with the last commit time
         fields[6] = f" {last_commit_time} "
