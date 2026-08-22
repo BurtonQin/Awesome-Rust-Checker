@@ -1,6 +1,9 @@
-name: (Preview) Update last commit time
+name: Update last commit time
 
-on: push
+on:
+  schedule:
+    - cron: '0 3 * * 1'
+  workflow_dispatch:
 
 jobs:
   update-preview:
@@ -11,13 +14,17 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Run update.py
-        run: python3 update_time.py && ls -alh && diff README.md test.md --color=always || mv test.md README.md
+      - name: Update README
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          python3 update_time.py
+          git diff -- README.md
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v7
         with:
-          token: ${{ secrets.CHECKER_PAT }} 
+          token: ${{ secrets.CHECKER_PAT }}
           add-paths: README.md
           commit-message: "[bot] Update last commit time in README.md"
           author: action-bot <BurtonQin+github-actions[bot]@users.noreply.github.com>
@@ -25,4 +32,4 @@ jobs:
           branch: update-commit-time-preview
           base: master
           title: '[bot] Update last commit time in README.md'
-          body: Some checkers recently are updated in their repo activies.
+          body: Some checkers recently are updated in their repo activities.

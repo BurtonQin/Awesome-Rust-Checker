@@ -1,6 +1,6 @@
 import os
 import re
-from datetime import date
+from datetime import datetime, timezone
 from pathlib import Path
 from urllib.parse import urlparse
 
@@ -80,7 +80,7 @@ def update_markdown_file(file_path):
     updated_lines = []
     pattern = r"\[(.*?)\]\((.*?)\)"
     github_header = "https://github.com/"
-    today = date.today().isoformat()
+    today = datetime.now(timezone.utc).date().isoformat()
     github_token = load_github_token()
 
     for line in lines:
